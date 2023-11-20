@@ -6,6 +6,7 @@ const userRouter=express.Router()
 
 userRouter.post("/register", async(req,res)=>{
     const {name,email,password}=req.body
+    console.log(req.body)
     try {
         const userExist=await userModel.findOne({email})
         console.log(userExist)

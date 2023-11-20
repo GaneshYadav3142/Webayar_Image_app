@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-
+const cors=require("cors")
 const dotenv=require("dotenv");
 const userRouter = require('./Router/userRouter');
 const authMiddleware = require('./AuthMiddleware/middleware');
@@ -8,7 +8,7 @@ const imageRouter = require('./Router/imageRouter');
 dotenv.config()
 const app = express();
 
-
+app.use(cors())
 app.use(express.json());
 
 
